@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class='post'>
+	<header class='post-header'>
+		<h2 class='post-title'> {{ page.title }} </h2>
+		<p class='post-meta'>
+			Posted on <time class='date' datetime='{{ page.date | date: "%Y-%m-%dT00:00:00+01:00" }}'>{{ page.date | date_to_string }}</time>
+		</p>
+	</header>
+
+		<div class='post-description'>
+			{{ content }}
+		</div>
+	<div style='margin: 25px 0; text-align:center'>
+		<a class='pure-button' href="http://twitter.com/share?url={{'http://www.savjee.be' | cgi_escape}}{{page.url | cgi_escape}}&text={{page.title | cgi_escape}}&via=Xafke" target='_blank'>
+	    	Like it? Tweet it.
+		</a>
+	</div>
+</section>
+
+<div id='comments'>
+	<div id='disqus_thread'></div>
+	<script type='text/javascript'>
+		var disqus_shortname = 'savjee';
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+
+	<noscript>Please enable JavaScript to view the comments</noscript>
+</div>
